@@ -41,13 +41,13 @@ public class ShiftsController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Shift> CreateShift(ShiftDTO dto)
+    public ActionResult<Shift> CreateShift(ShiftDto dto)
     {
         return Ok(_shiftsService.CreateShift(dto));
     }
 
     [HttpPut("{id}")]
-    public ActionResult<Shift> UpdateShift(int id, ShiftDTO dto)
+    public ActionResult<Shift> UpdateShift(int id, ShiftDto dto)
     {
         var selectedShift = _shiftsService.GetShiftById(id);
 

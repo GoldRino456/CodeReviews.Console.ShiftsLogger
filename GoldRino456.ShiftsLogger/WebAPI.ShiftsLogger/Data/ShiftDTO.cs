@@ -1,6 +1,6 @@
 ﻿namespace WebAPI.ShiftsLogger.Data
 {
-    public class ShiftDTO
+    public class ShiftDto
     {
         public DateTime ClockInTime { get; set; }
         public DateTime ClockOutTime { get; set; }

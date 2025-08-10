@@ -6,8 +6,8 @@ public interface IShiftsService
 {
     public List<Shift> GetAllShifts();
     public Shift? GetShiftById(int id);
-    public Shift CreateShift(ShiftDTO dto);
-    public Shift UpdateShift(int id, ShiftDTO dto);
+    public Shift CreateShift(ShiftDto dto);
+    public Shift UpdateShift(int id, ShiftDto dto);
     public string? DeleteShift(int id);
 }
 
@@ -20,7 +20,7 @@ public class ShiftsService : IShiftsService
         _dbContext = context;
     }
 
-    public Shift CreateShift(ShiftDTO dto)
+    public Shift CreateShift(ShiftDto dto)
     {
         var shift = ConvertDtoToShift(dto);
         var savedShift = _dbContext.Shifts.Add(shift);
@@ -54,7 +54,7 @@ public class ShiftsService : IShiftsService
         return savedShift == null ? null : savedShift;
     }
 
-    public Shift UpdateShift(int id, ShiftDTO dto)
+    public Shift UpdateShift(int id, ShiftDto dto)
     {
         Shift savedShift = _dbContext.Shifts.Find(id);
 
@@ -72,7 +72,7 @@ public class ShiftsService : IShiftsService
         return savedShift;
     }
 
-    private Shift ConvertDtoToShift(ShiftDTO dto)
+    private Shift ConvertDtoToShift(ShiftDto dto)
     {
         Shift newShift = new();
 
